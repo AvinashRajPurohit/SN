@@ -1,0 +1,71 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <title>समस्या निवारण</title>
+  </head>
+<style>
+  .navbar-logo {
+    height: 90px; /* Adjust the height as needed */
+    width: auto; /* Allow the width to adjust proportionally */
+  }
+</style>
+  <body style="background-color:#EAEFF2;">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">
+      <img src="{% static 'img/bjp-logo.png' %}" alt="BJP Logo" class="navbar-logo">
+    </a>  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+<a class="nav-link text-success" href="https://en.wikipedia.org/wiki/Chhagan_Singh" target="_blank" style="font-family: 'Helvetica', Arial, sans-serif;"><b>CHAGAN SINGH RAJPUROHIT (M.L.A.)</b></a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Contact Us</button>
+    </form>
+  </div>
+</nav>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-4">
+          <img src="{% static 'img/cs1.png' %}" alt="Right Human Picture" class="img-fluid mx-auto d-block mt-5 rounded-circle" style="max-height: 760px; width: auto;">
+        </div>
+        <div class="col-md-4">
+          <h1 class="text-center text-dark display-3">समस्या <b>निवारण</b></h1>
+          <div class="card bg-light mt-5">
+            <div class="card-body">
+              <h5 class="card-title text-center">अपनी समस्या बताए</h5>
+              <form method="POST">
+                {% csrf_token %}
+                {% for field in form %}
+                  <div class="mb-3">
+                    <label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}</label>
+                    {{ field }}
+                  </div>
+                {% endfor %}
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+             <div class="col-md-4">
+          <img src="{% static 'img/nm.png' %}" alt="Right Human Picture" class="img-fluid mx-auto d-block mt-5 rounded-circle" style="max-height: 480px; width: auto;">
+        </div>
+      </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- Bootstrap Bundle with Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
