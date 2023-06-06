@@ -126,10 +126,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 CORS_ALLOWED_ORIGINS = [
-    '*',
-    'https://ccee-2405-201-5c24-e048-c9fe-a21a-a090-8ecf.ngrok-free.app',
-    # Add any other trusted origins if needed
-    'http://ccee-2405-201-5c24-e048-c9fe-a21a-a090-8ecf.ngrok-free.app',
-    'http://127.0.0.1:8000',
-
+    '*'
 ]
